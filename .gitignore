@@ -1,14 +1,18 @@
 .venv/
 cache/
 models/
+notebooks/
 
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 *.egg-info/
+**/*.egg-info/
 *.ipynb
 .ipynb_checkpoints/
+**/.ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
@@ -17,6 +21,20 @@ __pycache__/
 *.temp
 .env
 .env.*
+*.env
+*.token
+*.tokens
+token.txt
+tokens.txt
+hf_token.txt
+huggingface_token.txt
+
+# Hugging Face and local model caches must stay local.
+.cache/huggingface/
+**/.cache/huggingface/
+models/huggingface/
+cache/huggingface/
+**/models--*/
 
 # Keep generated verification receipts, but avoid accidental binary/model artifacts.
 *.safetensors
