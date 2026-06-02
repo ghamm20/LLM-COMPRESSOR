@@ -1,0 +1,53 @@
+AirLLM Yi-34B code map
+Generated: 2026-06-02
+
+Model class route:
+- D:\AI\airllm\repo\air_llm\airllm\auto_model.py:27-45 chooses the AirLLM class from config.architectures[0].
+- For NousResearch/Nous-Hermes-2-Yi-34B, config.architectures[0] is LlamaForCausalLM.
+- auto_model.py:41-42 maps architectures containing "Llama" to airllm.AirLLMLlama2.
+- D:\AI\airllm\repo\air_llm\airllm\airllm.py:7 defines AirLLMLlama2 as a thin subclass of AirLLMBaseModel.
+
+Generation method:
+- AirLLMBaseModel subclasses transformers.GenerationMixin.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:325-327 implements can_generate.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:329-366 implements prepare_inputs_for_generation.
+- The actual generate implementation is inherited from transformers.GenerationMixin.
+
+Forward method:
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:396-643 implements AirLLMBaseModel.forward.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:420-423 deletes/reinitializes the meta model before each forward.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:441-600 streams one saved layer shard at a time through the GPU.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:637-643 returns CausalLMOutputWithPast.
+
+Layer and cache handling:
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:33-39 detects transformers.cache_utils.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:410-412 disables use_cache when cache_utils is installed.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:434-437 initializes an AirLLM legacy kv_cache_list only when use_cache remains true.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:517-547 handles past_key_values.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:561-580 handles the no-past path.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:580 originally contained a tuple-unpack assumption for old layer outputs when use_cache=True, but this was not the active Yi-34B failure because use_cache was forced false.
+
+BetterTransformer / attention path:
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:187-191 first tries BetterTransformer.
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:197-206 falls back to setting attn_implementation="sdpa".
+- Runtime logs showed the active attention class was transformers.models.llama.modeling_llama.LlamaAttention.
+
+Tokenizer assumptions:
+- D:\AI\airllm\repo\air_llm\inference_example.py:15-26 tokenizes a list of prompts, omits attention masks, and calls model.generate with use_cache=True.
+- The Yi-34B tokenizer loaded locally as LlamaTokenizerFast.
+- eos_token: <|im_end|>, eos_token_id: 7
+- bos_token: <|startoftext|>, bos_token_id: 1
+- pad_token: <unk>, pad_token_id: 0
+- Tokenizer loading and prompt tokenization passed; tokenizer was not the root cause.
+
+Return statements that can return None or omit values:
+- D:\AI\airllm\repo\air_llm\airllm\airllm_base.py:376-377 originally returned an empty dict from get_pos_emb_args.
+- That empty dict omitted position_embeddings when calling LlamaDecoderLayer.forward.
+- transformers.models.llama.modeling_llama.LlamaDecoderLayer.forward defaults position_embeddings to None.
+- transformers.models.llama.modeling_llama.LlamaAttention.forward requires position_embeddings and unpacks it.
+
+Patch:
+- Added AirLLMBaseModel.get_position_embeddings_args.
+- For models exposing self.model.model.rotary_emb, AirLLM now computes rotary_emb(seq, position_ids).
+- AirLLM now includes position_embeddings in decoder-layer kwargs when get_pos_emb_args did not already provide it.
+- This mirrors the transformers==4.48.3 LlamaModel.forward behavior without changing package versions.

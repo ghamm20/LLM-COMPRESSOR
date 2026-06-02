@@ -1,0 +1,227 @@
+AirLLM Yi 34B local test
+Generated: 2026-06-02T21:31:24.901976+00:00
+Status: FAIL
+Model used: NousResearch/Nous-Hermes-2-Yi-34B
+Download attempted: True
+AirLLM architecture compatibility: yes
+AirLLM compatibility reason: AirLLM AutoModel would match architecture 'LlamaForCausalLM' with marker 'Llama'.
+AirLLM load: pass
+Generation: fail
+Disk free before: 246.37 GiB
+Disk free after: 246.36 GiB
+Estimated weight size: 64.05 GiB
+Estimated AirLLM shard size: 64.05 GiB
+Estimated total with safety margin: 140.92 GiB
+
+Metadata:
+{
+  "status": "pass",
+  "sha": "fcb0a8847e76aea14aba9aa44009d4418ad7c18f",
+  "gated": false,
+  "private": false,
+  "library_name": "transformers",
+  "pipeline_tag": "text-generation",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "llama",
+    "text-generation",
+    "yi",
+    "instruct",
+    "finetune",
+    "chatml",
+    "gpt4",
+    "synthetic data",
+    "distillation",
+    "conversational",
+    "en",
+    "dataset:teknium/OpenHermes-2.5",
+    "base_model:01-ai/Yi-34B",
+    "base_model:finetune:01-ai/Yi-34B",
+    "license:apache-2.0",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "deploy:azure",
+    "region:us"
+  ],
+  "parameter_hints": {
+    "safetensors": {
+      "parameters": {
+        "BF16": 34388917248
+      },
+      "total": 34388917248
+    },
+    "card_data": {}
+  },
+  "storage_hints": {
+    "repo_file_count": 23,
+    "weight_file_count": 15,
+    "unknown_weight_file_count": 0,
+    "known_weight_bytes": 68777898032,
+    "estimated_weight_gib": 64.05,
+    "estimated_airllm_shard_gib": 64.05,
+    "estimated_total_disk_needed_gib": 128.11,
+    "estimated_total_with_safety_margin_gib": 140.92,
+    "safety_multiplier": 1.1,
+    "largest_weight_files": [
+      {
+        "name": "model-00006-of-00015.safetensors",
+        "size_bytes": 4991370160,
+        "size_gib": 4.65
+      },
+      {
+        "name": "model-00009-of-00015.safetensors",
+        "size_bytes": 4991370160,
+        "size_gib": 4.65
+      },
+      {
+        "name": "model-00012-of-00015.safetensors",
+        "size_bytes": 4991370160,
+        "size_gib": 4.65
+      },
+      {
+        "name": "model-00003-of-00015.safetensors",
+        "size_bytes": 4991370136,
+        "size_gib": 4.65
+      },
+      {
+        "name": "model-00001-of-00015.safetensors",
+        "size_bytes": 4793130760,
+        "size_gib": 4.46
+      },
+      {
+        "name": "model-00004-of-00015.safetensors",
+        "size_bytes": 4756459760,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00005-of-00015.safetensors",
+        "size_bytes": 4756459760,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00007-of-00015.safetensors",
+        "size_bytes": 4756459760,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00008-of-00015.safetensors",
+        "size_bytes": 4756459760,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00010-of-00015.safetensors",
+        "size_bytes": 4756459760,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00011-of-00015.safetensors",
+        "size_bytes": 4756459760,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00013-of-00015.safetensors",
+        "size_bytes": 4756459760,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00014-of-00015.safetensors",
+        "size_bytes": 4756459760,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00002-of-00015.safetensors",
+        "size_bytes": 4756459720,
+        "size_gib": 4.43
+      },
+      {
+        "name": "model-00015-of-00015.safetensors",
+        "size_bytes": 1211148856,
+        "size_gib": 1.13
+      }
+    ],
+    "non_airllm_weight_like_files": []
+  }
+}
+
+Config:
+{
+  "status": "pass",
+  "config_class": "LlamaConfig",
+  "config_module": "transformers.models.llama.configuration_llama",
+  "model_type": "llama",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "config_preview": {
+    "architectures": [
+      "LlamaForCausalLM"
+    ],
+    "model_type": "llama",
+    "hidden_size": 7168,
+    "num_hidden_layers": 60,
+    "num_attention_heads": 56,
+    "num_key_value_heads": 8,
+    "intermediate_size": 20480,
+    "torch_dtype": "bfloat16",
+    "vocab_size": 64000
+  },
+  "airllm_architecture_compatibility": {
+    "status": "yes",
+    "mapped_class": "AirLLMLlama2",
+    "reason": "AirLLM AutoModel would match architecture 'LlamaForCausalLM' with marker 'Llama'.",
+    "first_architecture": "LlamaForCausalLM",
+    "model_type": "llama",
+    "auto_markers": [
+      "Qwen2ForCausalLM",
+      "QWen",
+      "Baichuan",
+      "ChatGLM",
+      "InternLM",
+      "Mistral",
+      "Mixtral",
+      "Llama"
+    ]
+  }
+}
+
+GPU:
+{
+  "cuda_available": true,
+  "torch_version": "2.11.0+cu128",
+  "torch_cuda_version": "12.8",
+  "device_count": 1,
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ],
+  "memory_allocated_gib": 1.05,
+  "memory_reserved_gib": 1.06,
+  "max_memory_allocated_gib": 1.05,
+  "max_memory_reserved_gib": 1.06
+}
+
+RAM:
+{
+  "process_rss_gib": 3.76,
+  "system_used_gib": 24.16,
+  "system_available_gib": 39.71,
+  "system_total_gib": 63.87
+}
+
+Timing:
+{
+  "load_start": "2026-06-02T21:31:56.133449+00:00",
+  "load_end": "2026-06-02T21:32:02.259119+00:00",
+  "load_seconds": 6.126,
+  "generation_start": "2026-06-02T21:32:02.261122+00:00",
+  "generation_end": null,
+  "generation_seconds": null
+}
+
+Output sample:
+
+
+Errors:
+[
+  "TypeError('cannot unpack non-iterable NoneType object')"
+]

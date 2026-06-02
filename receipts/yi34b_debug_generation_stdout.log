@@ -1,0 +1,131 @@
+
+=== A_environment ===
+>>>> cache_utils installed
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "torch": "2.11.0+cu128",
+  "torch_cuda_version": "12.8",
+  "cuda_available": true,
+  "gpu_name": "NVIDIA GeForce RTX 3060 Ti",
+  "transformers": "4.48.3",
+  "optimum": "1.27.0",
+  "airllm_import_path": "D:\\AI\\airllm\\repo\\air_llm\\airllm\\__init__.py",
+  "disk_d": {
+    "total_gib": 465.75,
+    "used_gib": 219.38,
+    "free_gib": 246.36
+  },
+  "env": {
+    "HF_HOME": "D:\\AI\\airllm\\models\\huggingface",
+    "HUGGINGFACE_HUB_CACHE": "D:\\AI\\airllm\\models\\huggingface\\hub",
+    "TRANSFORMERS_CACHE": "D:\\AI\\airllm\\models\\huggingface\\transformers",
+    "TORCH_HOME": "D:\\AI\\airllm\\cache\\torch",
+    "TEMP": "D:\\AI\\airllm\\cache\\temp",
+    "TMP": "D:\\AI\\airllm\\cache\\temp",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "snapshot_exists": true,
+  "shards_exist": true,
+  "summary": "Environment and local cache paths recorded."
+}
+
+=== B_tokenizer ===
+{
+  "tokenizer_class": "LlamaTokenizerFast",
+  "tokenizer_module": "transformers.models.llama.tokenization_llama_fast",
+  "eos_token": "<|im_end|>",
+  "eos_token_id": 7,
+  "bos_token": "<|startoftext|>",
+  "bos_token_id": 1,
+  "pad_token": "<unk>",
+  "pad_token_id": 0,
+  "input_ids": {
+    "type": "Tensor",
+    "shape": [
+      1,
+      10
+    ],
+    "dtype": "torch.int64",
+    "device": "cpu"
+  },
+  "attention_mask": {
+    "type": "Tensor",
+    "shape": [
+      1,
+      10
+    ],
+    "dtype": "torch.int64",
+    "device": "cpu"
+  },
+  "tokens": [
+    12154,
+    730,
+    2001,
+    750,
+    21500,
+    18441,
+    594,
+    853,
+    9554,
+    98
+  ],
+  "summary": "Tokenizer loaded from local snapshot and prompt tokenized."
+}
+
+=== C_attention_probe ===
+{
+  "patched_runtime_only": "transformers.models.llama.modeling_llama.LlamaAttention.forward",
+  "summary": "Runtime-only attention probe installed; no files changed."
+}
+
+=== C_airllm_load ===
+found index file...
+found_layers:{'model.embed_tokens.': True, 'model.layers.0.': True, 'model.layers.1.': True, 'model.layers.2.': True, 'model.layers.3.': True, 'model.layers.4.': True, 'model.layers.5.': True, 'model.layers.6.': True, 'model.layers.7.': True, 'model.layers.8.': True, 'model.layers.9.': True, 'model.layers.10.': True, 'model.layers.11.': True, 'model.layers.12.': True, 'model.layers.13.': True, 'model.layers.14.': True, 'model.layers.15.': True, 'model.layers.16.': True, 'model.layers.17.': True, 'model.layers.18.': True, 'model.layers.19.': True, 'model.layers.20.': True, 'model.layers.21.': True, 'model.layers.22.': True, 'model.layers.23.': True, 'model.layers.24.': True, 'model.layers.25.': True, 'model.layers.26.': True, 'model.layers.27.': True, 'model.layers.28.': True, 'model.layers.29.': True, 'model.layers.30.': True, 'model.layers.31.': True, 'model.layers.32.': True, 'model.layers.33.': True, 'model.layers.34.': True, 'model.layers.35.': True, 'model.layers.36.': True, 'model.layers.37.': True, 'model.layers.38.': True, 'model.layers.39.': True, 'model.layers.40.': True, 'model.layers.41.': True, 'model.layers.42.': True, 'model.layers.43.': True, 'model.layers.44.': True, 'model.layers.45.': True, 'model.layers.46.': True, 'model.layers.47.': True, 'model.layers.48.': True, 'model.layers.49.': True, 'model.layers.50.': True, 'model.layers.51.': True, 'model.layers.52.': True, 'model.layers.53.': True, 'model.layers.54.': True, 'model.layers.55.': True, 'model.layers.56.': True, 'model.layers.57.': True, 'model.layers.58.': True, 'model.layers.59.': True, 'model.norm.': True, 'lm_head.': True}
+saved layers already found in D:\AI\airllm\models\NousResearch_Nous-Hermes-2-Yi-34B\airllm_shards\splitted_model
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+{
+  "model_class": "AirLLMLlama2",
+  "model_module": "airllm.airllm",
+  "has_generate": true,
+  "has_forward": true,
+  "has_model": true,
+  "has_tokenizer": true,
+  "has_generation_config": true,
+  "inner_model_class": "LlamaForCausalLM",
+  "device": "cuda:0",
+  "running_device": "cuda:0",
+  "attention_probe": {
+    "calls": 0,
+    "first_none_call": null
+  },
+  "summary": "AirLLM model loaded from local snapshot and existing shards."
+}
+
+=== D_forward_raw ===
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+
+=== D_forward_use_cache_false ===
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+
+=== D_forward_attention_mask ===
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+
+=== E_generate_max_new_tokens_1 ===
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+
+=== F_generate_max_new_tokens_4 ===
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+
+=== G_generate_readme_style ===
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+
+Wrote D:\AI\airllm\receipts\yi34b_debug_generation.txt
+Wrote D:\AI\airllm\receipts\yi34b_debug_generation.json

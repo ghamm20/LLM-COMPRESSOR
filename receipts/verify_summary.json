@@ -1,0 +1,27 @@
+{
+  "root": "D:\\AI\\airllm",
+  "verify_log": "D:\\AI\\airllm\\receipts\\verify_log.txt",
+  "pip_freeze": "D:\\AI\\airllm\\receipts\\pip_freeze.txt",
+  "d_free_gb_at_verification": 374.32,
+  "python_version": "Python 3.12.10",
+  "gpu_detected": "NVIDIA GeForce RTX 3060 Ti, 591.86, 8192 MiB",
+  "cuda_version_detected": "13.1",
+  "torch": {
+    "import_ok": true,
+    "version": "2.11.0+cu128",
+    "torch_cuda_version": "12.8",
+    "cuda_available": true,
+    "device_count": 1,
+    "devices": [
+      "NVIDIA GeForce RTX 3060 Ti"
+    ]
+  },
+  "airllm": {
+    "import_ok": true,
+    "module_file": "D:\\AI\\airllm\\repo\\air_llm\\airllm\\__init__.py",
+    "automodel_callable": true,
+    "llama_class": "AirLLMLlama2"
+  },
+  "airllm_import_status": "pass",
+  "smoke_status": "pass"
+}

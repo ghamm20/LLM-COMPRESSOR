@@ -1,0 +1,259 @@
+D:\AI\airllm\.venv\Lib\site-packages\transformers\utils\hub.py:128: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+BetterTransformer is deprecated and will be removed in Optimum v2.0.
+BetterTransformer is deprecated and will be removed in Optimum v2.0.
+running layers(cuda:0):   0%|          | 0/63 [00:00<?, ?it/s]running layers(cuda:0):   2%|1         | 1/63 [00:00<00:56,  1.10it/s]ATTENTION_PROBE position_embeddings=None {"layer_idx": 0, "hidden_states": {"type": "Tensor", "shape": [1, 10, 7168], "dtype": "torch.float16", "device": "cuda:0"}, "attention_mask": {"type": "Tensor", "shape": [1, 1, 10, 10], "dtype": "torch.bool", "device": "cuda:0"}, "position_ids": {"type": "Tensor", "shape": [1, 10], "dtype": "torch.int64", "device": "cuda:0"}, "cache_position": null, "use_cache": false, "position_embeddings": null}
+running layers(cuda:0):   2%|1         | 1/63 [00:01<02:01,  1.96s/it]
+Traceback (most recent call last):
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 127, in run_check
+    data = func()
+           ^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 298, in forward_raw
+    output = model(encoded["input_ids"], return_dict=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 369, in __call__
+    return self.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 569, in forward
+    new_seq = layer(seq, **kwargs)[0]
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 335, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+                                       ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 248, in probed_forward
+    return original_forward(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 273, in forward
+    cos, sin = position_embeddings
+    ^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+
+BetterTransformer is deprecated and will be removed in Optimum v2.0.
+running layers(cuda:0):   0%|          | 0/63 [00:00<?, ?it/s]running layers(cuda:0):   2%|1         | 1/63 [00:00<00:31,  1.97it/s]running layers(cuda:0):   2%|1         | 1/63 [00:01<01:10,  1.14s/it]
+Traceback (most recent call last):
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 127, in run_check
+    data = func()
+           ^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 310, in forward_use_cache_false
+    output = model(input_ids=encoded["input_ids"], use_cache=False, return_dict=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 369, in __call__
+    return self.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 569, in forward
+    new_seq = layer(seq, **kwargs)[0]
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 335, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+                                       ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 248, in probed_forward
+    return original_forward(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 273, in forward
+    cos, sin = position_embeddings
+    ^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+
+BetterTransformer is deprecated and will be removed in Optimum v2.0.
+running layers(cuda:0):   0%|          | 0/63 [00:00<?, ?it/s]running layers(cuda:0):   2%|1         | 1/63 [00:00<00:29,  2.08it/s]running layers(cuda:0):   2%|1         | 1/63 [00:01<01:10,  1.14s/it]
+Traceback (most recent call last):
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 127, in run_check
+    data = func()
+           ^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 322, in forward_attention_mask
+    output = model(
+             ^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 369, in __call__
+    return self.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 569, in forward
+    new_seq = layer(seq, **kwargs)[0]
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 335, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+                                       ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 248, in probed_forward
+    return original_forward(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 273, in forward
+    cos, sin = position_embeddings
+    ^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+
+BetterTransformer is deprecated and will be removed in Optimum v2.0.
+running layers(cuda:0):   0%|          | 0/63 [00:00<?, ?it/s]running layers(cuda:0):   2%|1         | 1/63 [00:00<00:33,  1.85it/s]running layers(cuda:0):   2%|1         | 1/63 [00:01<01:12,  1.17s/it]
+Traceback (most recent call last):
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 127, in run_check
+    data = func()
+           ^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 340, in generate_one_token
+    output = model.generate(
+             ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\generation\utils.py", line 2255, in generate
+    result = self._sample(
+             ^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\generation\utils.py", line 3254, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 369, in __call__
+    return self.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 569, in forward
+    new_seq = layer(seq, **kwargs)[0]
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 335, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+                                       ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 248, in probed_forward
+    return original_forward(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 273, in forward
+    cos, sin = position_embeddings
+    ^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+
+BetterTransformer is deprecated and will be removed in Optimum v2.0.
+running layers(cuda:0):   0%|          | 0/63 [00:00<?, ?it/s]running layers(cuda:0):   2%|1         | 1/63 [00:00<00:33,  1.87it/s]running layers(cuda:0):   2%|1         | 1/63 [00:01<01:12,  1.17s/it]
+Traceback (most recent call last):
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 127, in run_check
+    data = func()
+           ^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 360, in generate_four_tokens
+    output = model.generate(
+             ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\generation\utils.py", line 2255, in generate
+    result = self._sample(
+             ^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\generation\utils.py", line 3254, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 369, in __call__
+    return self.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 569, in forward
+    new_seq = layer(seq, **kwargs)[0]
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 335, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+                                       ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 248, in probed_forward
+    return original_forward(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 273, in forward
+    cos, sin = position_embeddings
+    ^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+
+BetterTransformer is deprecated and will be removed in Optimum v2.0.
+running layers(cuda:0):   0%|          | 0/63 [00:00<?, ?it/s]running layers(cuda:0):   2%|1         | 1/63 [00:00<00:33,  1.84it/s]running layers(cuda:0):   2%|1         | 1/63 [00:01<01:11,  1.16s/it]
+Traceback (most recent call last):
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 127, in run_check
+    data = func()
+           ^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 388, in generate_readme_style
+    output = model.generate(
+             ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\generation\utils.py", line 2255, in generate
+    result = self._sample(
+             ^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\generation\utils.py", line 3254, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 369, in __call__
+    return self.forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\repo\air_llm\airllm\airllm_base.py", line 569, in forward
+    new_seq = layer(seq, **kwargs)[0]
+              ^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 335, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+                                       ^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\scripts\debug_yi34b_generation.py", line 248, in probed_forward
+    return original_forward(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py", line 273, in forward
+    cos, sin = position_embeddings
+    ^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+

@@ -1,0 +1,70 @@
+AirLLM Yi-34B failure trace summary
+Generated: 2026-06-02
+
+Model:
+- NousResearch/Nous-Hermes-2-Yi-34B
+
+Environment:
+- Python: 3.12.10
+- Torch: 2.11.0+cu128
+- Transformers: 4.48.3
+- Optimum: 1.27.0
+- CUDA available: yes
+- GPU: NVIDIA GeForce RTX 3060 Ti
+- AirLLM path: D:\AI\airllm\repo\air_llm\airllm\__init__.py
+
+Existing receipt status:
+- D:\AI\airllm\receipts\yi34b_airllm_test.json recorded AirLLM load pass and generation fail.
+- The original receipts contained only TypeError('cannot unpack non-iterable NoneType object'), not a full Python traceback.
+- Full traceback was captured by D:\AI\airllm\scripts\debug_yi34b_generation.py.
+
+Exact traceback root:
+- Calling function: AirLLMBaseModel.forward
+- Calling file: D:\AI\airllm\repo\air_llm\airllm\airllm_base.py
+- Calling line before patch: 569
+- Calling statement before patch: new_seq = layer(seq, **kwargs)[0]
+- Called function: transformers.models.llama.modeling_llama.LlamaDecoderLayer.forward
+- Called file: D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py
+- Called line: 335
+- Failing function: transformers.models.llama.modeling_llama.LlamaAttention.forward
+- Failing file: D:\AI\airllm\.venv\Lib\site-packages\transformers\models\llama\modeling_llama.py
+- Failing line: 273
+- Failing statement: cos, sin = position_embeddings
+- Exception: TypeError: cannot unpack non-iterable NoneType object
+
+Object that was None:
+- position_embeddings
+
+Why it was None:
+- AirLLM directly executes each LlamaDecoderLayer.
+- In transformers==4.48.3, LlamaModel.forward creates shared rotary position embeddings once via self.rotary_emb(hidden_states, position_ids) and passes them into every decoder layer.
+- AirLLM bypasses LlamaModel.forward and called each LlamaDecoderLayer without position_embeddings.
+- The default LlamaDecoderLayer.forward argument is position_embeddings=None.
+- LlamaDecoderLayer.forward passed that None to LlamaAttention.forward.
+- LlamaAttention.forward attempted to unpack it at modeling_llama.py:273.
+
+Inputs captured by runtime probe:
+- layer_idx: 0
+- hidden_states: Tensor shape [1, 10, 7168], dtype torch.float16, device cuda:0
+- attention_mask: Tensor shape [1, 1, 10, 10], dtype torch.bool, device cuda:0
+- position_ids: Tensor shape [1, 10], dtype torch.int64, device cuda:0
+- cache_position: None
+- use_cache: False
+- position_embeddings: None
+
+Why AirLLM load passed but generation failed:
+- AirLLM load only builds the empty/meta model, validates cached split layer files, initializes tokenizer/config, and prepares layer objects.
+- The incompatible path is only exercised when forward/generation reaches the first Llama decoder layer.
+
+Patch result:
+- Patch applied: yes
+- Patched file: D:\AI\airllm\repo\air_llm\airllm\airllm_base.py
+- Backup path: D:\AI\airllm\receipts\patched_backups\airllm_base.py.before_yi34b_position_embeddings_patch
+- Diff path: D:\AI\airllm\receipts\yi34b_patch.diff
+- Package changes: none
+
+Generation rerun:
+- Script: D:\AI\airllm\rerun_yi34b_generation.ps1
+- Receipt: D:\AI\airllm\receipts\yi34b_generation_rerun.json
+- Status: PASS
+- Generated text appeared through AirLLM.

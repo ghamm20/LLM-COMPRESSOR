@@ -1,0 +1,237 @@
+{
+  "generated_at": "2026-06-02T22:00:03.351025+00:00",
+  "root": "D:\\AI\\airllm",
+  "model_id": "NousResearch/Nous-Hermes-2-Yi-34B",
+  "model_snapshot": "D:\\AI\\airllm\\models\\huggingface\\hub\\models--NousResearch--Nous-Hermes-2-Yi-34B\\snapshots\\fcb0a8847e76aea14aba9aa44009d4418ad7c18f",
+  "shard_dir": "D:\\AI\\airllm\\models\\NousResearch_Nous-Hermes-2-Yi-34B\\airllm_shards",
+  "prompt": "Explain local LLM inference in one sentence.",
+  "checks": {
+    "A_environment": {
+      "status": "pass",
+      "started_at": "2026-06-02T22:00:03.351025+00:00",
+      "elapsed_seconds": 3.317,
+      "data": {
+        "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+        "torch": "2.11.0+cu128",
+        "torch_cuda_version": "12.8",
+        "cuda_available": true,
+        "gpu_name": "NVIDIA GeForce RTX 3060 Ti",
+        "transformers": "4.48.3",
+        "optimum": "1.27.0",
+        "airllm_import_path": "D:\\AI\\airllm\\repo\\air_llm\\airllm\\__init__.py",
+        "disk_d": {
+          "total_gib": 465.75,
+          "used_gib": 219.38,
+          "free_gib": 246.36
+        },
+        "env": {
+          "HF_HOME": "D:\\AI\\airllm\\models\\huggingface",
+          "HUGGINGFACE_HUB_CACHE": "D:\\AI\\airllm\\models\\huggingface\\hub",
+          "TRANSFORMERS_CACHE": "D:\\AI\\airllm\\models\\huggingface\\transformers",
+          "TORCH_HOME": "D:\\AI\\airllm\\cache\\torch",
+          "TEMP": "D:\\AI\\airllm\\cache\\temp",
+          "TMP": "D:\\AI\\airllm\\cache\\temp",
+          "HF_HUB_OFFLINE": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "snapshot_exists": true,
+        "shards_exist": true,
+        "summary": "Environment and local cache paths recorded."
+      },
+      "summary": "Environment and local cache paths recorded.",
+      "error": "",
+      "traceback": "",
+      "finished_at": "2026-06-02T22:00:06.669745+00:00"
+    },
+    "B_tokenizer": {
+      "status": "pass",
+      "started_at": "2026-06-02T22:00:06.671748+00:00",
+      "elapsed_seconds": 0.788,
+      "data": {
+        "tokenizer_class": "LlamaTokenizerFast",
+        "tokenizer_module": "transformers.models.llama.tokenization_llama_fast",
+        "eos_token": "<|im_end|>",
+        "eos_token_id": 7,
+        "bos_token": "<|startoftext|>",
+        "bos_token_id": 1,
+        "pad_token": "<unk>",
+        "pad_token_id": 0,
+        "input_ids": {
+          "type": "Tensor",
+          "shape": [
+            1,
+            10
+          ],
+          "dtype": "torch.int64",
+          "device": "cpu"
+        },
+        "attention_mask": {
+          "type": "Tensor",
+          "shape": [
+            1,
+            10
+          ],
+          "dtype": "torch.int64",
+          "device": "cpu"
+        },
+        "tokens": [
+          12154,
+          730,
+          2001,
+          750,
+          21500,
+          18441,
+          594,
+          853,
+          9554,
+          98
+        ],
+        "summary": "Tokenizer loaded from local snapshot and prompt tokenized."
+      },
+      "summary": "Tokenizer loaded from local snapshot and prompt tokenized.",
+      "error": "",
+      "traceback": "",
+      "finished_at": "2026-06-02T22:00:07.464134+00:00"
+    },
+    "C_attention_probe": {
+      "status": "pass",
+      "started_at": "2026-06-02T22:00:07.466139+00:00",
+      "elapsed_seconds": 0.0,
+      "data": {
+        "patched_runtime_only": "transformers.models.llama.modeling_llama.LlamaAttention.forward",
+        "summary": "Runtime-only attention probe installed; no files changed."
+      },
+      "summary": "Runtime-only attention probe installed; no files changed.",
+      "error": "",
+      "traceback": "",
+      "finished_at": "2026-06-02T22:00:07.467139+00:00"
+    },
+    "C_airllm_load": {
+      "status": "pass",
+      "started_at": "2026-06-02T22:00:07.469140+00:00",
+      "elapsed_seconds": 3.768,
+      "data": {
+        "model_class": "AirLLMLlama2",
+        "model_module": "airllm.airllm",
+        "has_generate": true,
+        "has_forward": true,
+        "has_model": true,
+        "has_tokenizer": true,
+        "has_generation_config": true,
+        "inner_model_class": "LlamaForCausalLM",
+        "device": "cuda:0",
+        "running_device": "cuda:0",
+        "attention_probe": {
+          "calls": 6,
+          "first_none_call": {
+            "layer_idx": 0,
+            "hidden_states": {
+              "type": "Tensor",
+              "shape": [
+                1,
+                10,
+                7168
+              ],
+              "dtype": "torch.float16",
+              "device": "cuda:0"
+            },
+            "attention_mask": {
+              "type": "Tensor",
+              "shape": [
+                1,
+                1,
+                10,
+                10
+              ],
+              "dtype": "torch.bool",
+              "device": "cuda:0"
+            },
+            "position_ids": {
+              "type": "Tensor",
+              "shape": [
+                1,
+                10
+              ],
+              "dtype": "torch.int64",
+              "device": "cuda:0"
+            },
+            "cache_position": null,
+            "use_cache": false,
+            "position_embeddings": null
+          }
+        },
+        "summary": "AirLLM model loaded from local snapshot and existing shards."
+      },
+      "summary": "AirLLM model loaded from local snapshot and existing shards.",
+      "error": "",
+      "traceback": "",
+      "finished_at": "2026-06-02T22:00:11.238445+00:00"
+    },
+    "D_forward_raw": {
+      "status": "fail",
+      "started_at": "2026-06-02T22:00:11.240428+00:00",
+      "elapsed_seconds": 2.808,
+      "data": null,
+      "summary": "",
+      "error": "TypeError('cannot unpack non-iterable NoneType object')",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 127, in run_check\n    data = func()\n           ^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 298, in forward_raw\n    output = model(encoded[\"input_ids\"], return_dict=True)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 369, in __call__\n    return self.forward(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 569, in forward\n    new_seq = layer(seq, **kwargs)[0]\n              ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 335, in forward\n    hidden_states, self_attn_weights = self.self_attn(\n                                       ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 248, in probed_forward\n    return original_forward(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 273, in forward\n    cos, sin = position_embeddings\n    ^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n",
+      "finished_at": "2026-06-02T22:00:14.049840+00:00"
+    },
+    "D_forward_use_cache_false": {
+      "status": "fail",
+      "started_at": "2026-06-02T22:00:14.051839+00:00",
+      "elapsed_seconds": 2.144,
+      "data": null,
+      "summary": "",
+      "error": "TypeError('cannot unpack non-iterable NoneType object')",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 127, in run_check\n    data = func()\n           ^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 310, in forward_use_cache_false\n    output = model(input_ids=encoded[\"input_ids\"], use_cache=False, return_dict=True)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 369, in __call__\n    return self.forward(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 569, in forward\n    new_seq = layer(seq, **kwargs)[0]\n              ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 335, in forward\n    hidden_states, self_attn_weights = self.self_attn(\n                                       ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 248, in probed_forward\n    return original_forward(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 273, in forward\n    cos, sin = position_embeddings\n    ^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n",
+      "finished_at": "2026-06-02T22:00:16.197755+00:00"
+    },
+    "D_forward_attention_mask": {
+      "status": "fail",
+      "started_at": "2026-06-02T22:00:16.201790+00:00",
+      "elapsed_seconds": 2.181,
+      "data": null,
+      "summary": "",
+      "error": "TypeError('cannot unpack non-iterable NoneType object')",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 127, in run_check\n    data = func()\n           ^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 322, in forward_attention_mask\n    output = model(\n             ^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 369, in __call__\n    return self.forward(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 569, in forward\n    new_seq = layer(seq, **kwargs)[0]\n              ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 335, in forward\n    hidden_states, self_attn_weights = self.self_attn(\n                                       ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 248, in probed_forward\n    return original_forward(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 273, in forward\n    cos, sin = position_embeddings\n    ^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n",
+      "finished_at": "2026-06-02T22:00:18.384857+00:00"
+    },
+    "E_generate_max_new_tokens_1": {
+      "status": "fail",
+      "started_at": "2026-06-02T22:00:18.386865+00:00",
+      "elapsed_seconds": 2.28,
+      "data": null,
+      "summary": "",
+      "error": "TypeError('cannot unpack non-iterable NoneType object')",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 127, in run_check\n    data = func()\n           ^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 340, in generate_one_token\n    output = model.generate(\n             ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\utils\\_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\generation\\utils.py\", line 2255, in generate\n    result = self._sample(\n             ^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\generation\\utils.py\", line 3254, in _sample\n    outputs = self(**model_inputs, return_dict=True)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 369, in __call__\n    return self.forward(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 569, in forward\n    new_seq = layer(seq, **kwargs)[0]\n              ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 335, in forward\n    hidden_states, self_attn_weights = self.self_attn(\n                                       ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 248, in probed_forward\n    return original_forward(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 273, in forward\n    cos, sin = position_embeddings\n    ^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n",
+      "finished_at": "2026-06-02T22:00:20.668114+00:00"
+    },
+    "F_generate_max_new_tokens_4": {
+      "status": "fail",
+      "started_at": "2026-06-02T22:00:20.670736+00:00",
+      "elapsed_seconds": 2.174,
+      "data": null,
+      "summary": "",
+      "error": "TypeError('cannot unpack non-iterable NoneType object')",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 127, in run_check\n    data = func()\n           ^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 360, in generate_four_tokens\n    output = model.generate(\n             ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\utils\\_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\generation\\utils.py\", line 2255, in generate\n    result = self._sample(\n             ^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\generation\\utils.py\", line 3254, in _sample\n    outputs = self(**model_inputs, return_dict=True)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 369, in __call__\n    return self.forward(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 569, in forward\n    new_seq = layer(seq, **kwargs)[0]\n              ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 335, in forward\n    hidden_states, self_attn_weights = self.self_attn(\n                                       ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 248, in probed_forward\n    return original_forward(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 273, in forward\n    cos, sin = position_embeddings\n    ^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n",
+      "finished_at": "2026-06-02T22:00:22.846158+00:00"
+    },
+    "G_generate_readme_style": {
+      "status": "fail",
+      "started_at": "2026-06-02T22:00:22.849158+00:00",
+      "elapsed_seconds": 2.215,
+      "data": null,
+      "summary": "",
+      "error": "TypeError('cannot unpack non-iterable NoneType object')",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 127, in run_check\n    data = func()\n           ^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 388, in generate_readme_style\n    output = model.generate(\n             ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\utils\\_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\generation\\utils.py\", line 2255, in generate\n    result = self._sample(\n             ^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\generation\\utils.py\", line 3254, in _sample\n    outputs = self(**model_inputs, return_dict=True)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 369, in __call__\n    return self.forward(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\repo\\air_llm\\airllm\\airllm_base.py\", line 569, in forward\n    new_seq = layer(seq, **kwargs)[0]\n              ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 335, in forward\n    hidden_states, self_attn_weights = self.self_attn(\n                                       ^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1779, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1790, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\scripts\\debug_yi34b_generation.py\", line 248, in probed_forward\n    return original_forward(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\AI\\airllm\\.venv\\Lib\\site-packages\\transformers\\models\\llama\\modeling_llama.py\", line 273, in forward\n    cos, sin = position_embeddings\n    ^^^^^^^^\nTypeError: cannot unpack non-iterable NoneType object\n",
+      "finished_at": "2026-06-02T22:00:25.065450+00:00"
+    }
+  },
+  "finished_at": "2026-06-02T22:00:25.067450+00:00",
+  "disk_after": {
+    "total_gib": 465.75,
+    "used_gib": 219.38,
+    "free_gib": 246.36
+  }
+}

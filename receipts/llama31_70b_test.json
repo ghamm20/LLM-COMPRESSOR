@@ -1,0 +1,365 @@
+{
+  "generated_at": "2026-06-02T20:44:27.624956+00:00",
+  "root": "D:\\AI\\airllm",
+  "primary_model": "meta-llama/Llama-3.1-70B-Instruct",
+  "backup_model": "NousResearch/Meta-Llama-3.1-70B-Instruct",
+  "model_used": "NousResearch/Meta-Llama-3.1-70B-Instruct",
+  "status": "PARTIAL",
+  "prompt": "Explain in one sentence what local LLM inference means.",
+  "max_new_tokens": 16,
+  "hf_token_present": false,
+  "download_attempted": false,
+  "airllm_load": {
+    "status": "not_attempted"
+  },
+  "generation": {
+    "status": "not_attempted"
+  },
+  "candidate_preflights": {
+    "meta-llama/Llama-3.1-70B-Instruct": {
+      "metadata": {
+        "status": "pass",
+        "model_id": "meta-llama/Llama-3.1-70B-Instruct",
+        "sha": "1605565b47bb9346c5515c34102e054115b4f98b",
+        "gated": "manual",
+        "private": false,
+        "library_name": "transformers",
+        "pipeline_tag": "text-generation",
+        "weight_file_count": 38,
+        "unknown_weight_file_count": 0,
+        "known_weight_bytes": 282235266064,
+        "estimated_download_gib": 262.85,
+        "estimated_airllm_shards_gib": 262.85,
+        "estimated_total_disk_needed_gib": 525.7,
+        "estimated_total_with_safety_margin_gib": 551.99,
+        "largest_weight_files": [
+          {
+            "name": "original/consolidated.00.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.01.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.02.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.03.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.04.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.05.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.06.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.07.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "model-00008-of-00030.safetensors",
+            "size_bytes": 4999711728,
+            "size_gib": 4.66
+          },
+          {
+            "name": "model-00013-of-00030.safetensors",
+            "size_bytes": 4999711728,
+            "size_gib": 4.66
+          },
+          {
+            "name": "model-00018-of-00030.safetensors",
+            "size_bytes": 4999711728,
+            "size_gib": 4.66
+          },
+          {
+            "name": "model-00023-of-00030.safetensors",
+            "size_bytes": 4999711728,
+            "size_gib": 4.66
+          }
+        ]
+      },
+      "config": {
+        "status": "not_attempted",
+        "reason": "model is gated and no local Hugging Face token/login is available"
+      }
+    },
+    "NousResearch/Meta-Llama-3.1-70B-Instruct": {
+      "metadata": {
+        "status": "pass",
+        "model_id": "NousResearch/Meta-Llama-3.1-70B-Instruct",
+        "sha": "d50656ee28e2c2906d317cbbb6fcb55eb4055a84",
+        "gated": false,
+        "private": false,
+        "library_name": "transformers",
+        "pipeline_tag": "text-generation",
+        "weight_file_count": 38,
+        "unknown_weight_file_count": 0,
+        "known_weight_bytes": 282235266064,
+        "estimated_download_gib": 262.85,
+        "estimated_airllm_shards_gib": 262.85,
+        "estimated_total_disk_needed_gib": 525.7,
+        "estimated_total_with_safety_margin_gib": 551.99,
+        "largest_weight_files": [
+          {
+            "name": "original/consolidated.00.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.01.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.02.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.03.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.04.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.05.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.06.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "original/consolidated.07.pth",
+            "size_bytes": 17640971024,
+            "size_gib": 16.43
+          },
+          {
+            "name": "model-00008-of-00030.safetensors",
+            "size_bytes": 4999711728,
+            "size_gib": 4.66
+          },
+          {
+            "name": "model-00013-of-00030.safetensors",
+            "size_bytes": 4999711728,
+            "size_gib": 4.66
+          },
+          {
+            "name": "model-00018-of-00030.safetensors",
+            "size_bytes": 4999711728,
+            "size_gib": 4.66
+          },
+          {
+            "name": "model-00023-of-00030.safetensors",
+            "size_bytes": 4999711728,
+            "size_gib": 4.66
+          }
+        ]
+      },
+      "config": {
+        "status": "pass",
+        "config_class": "LlamaConfig",
+        "config_module": "transformers.models.llama.configuration_llama",
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "model_type": "llama",
+        "airllm_compatible": "yes",
+        "airllm_reason": "Architecture 'LlamaForCausalLM' matches AirLLM marker 'Llama'.",
+        "airllm_mapped_class": "AirLLMLlama2",
+        "config_preview": {
+          "architectures": [
+            "LlamaForCausalLM"
+          ],
+          "model_type": "llama",
+          "hidden_size": 8192,
+          "num_hidden_layers": 80,
+          "num_attention_heads": 64,
+          "num_key_value_heads": 8,
+          "torch_dtype": "bfloat16",
+          "vocab_size": 128256
+        }
+      }
+    }
+  },
+  "selected_preflight": {
+    "metadata": {
+      "status": "pass",
+      "model_id": "NousResearch/Meta-Llama-3.1-70B-Instruct",
+      "sha": "d50656ee28e2c2906d317cbbb6fcb55eb4055a84",
+      "gated": false,
+      "private": false,
+      "library_name": "transformers",
+      "pipeline_tag": "text-generation",
+      "weight_file_count": 38,
+      "unknown_weight_file_count": 0,
+      "known_weight_bytes": 282235266064,
+      "estimated_download_gib": 262.85,
+      "estimated_airllm_shards_gib": 262.85,
+      "estimated_total_disk_needed_gib": 525.7,
+      "estimated_total_with_safety_margin_gib": 551.99,
+      "largest_weight_files": [
+        {
+          "name": "original/consolidated.00.pth",
+          "size_bytes": 17640971024,
+          "size_gib": 16.43
+        },
+        {
+          "name": "original/consolidated.01.pth",
+          "size_bytes": 17640971024,
+          "size_gib": 16.43
+        },
+        {
+          "name": "original/consolidated.02.pth",
+          "size_bytes": 17640971024,
+          "size_gib": 16.43
+        },
+        {
+          "name": "original/consolidated.03.pth",
+          "size_bytes": 17640971024,
+          "size_gib": 16.43
+        },
+        {
+          "name": "original/consolidated.04.pth",
+          "size_bytes": 17640971024,
+          "size_gib": 16.43
+        },
+        {
+          "name": "original/consolidated.05.pth",
+          "size_bytes": 17640971024,
+          "size_gib": 16.43
+        },
+        {
+          "name": "original/consolidated.06.pth",
+          "size_bytes": 17640971024,
+          "size_gib": 16.43
+        },
+        {
+          "name": "original/consolidated.07.pth",
+          "size_bytes": 17640971024,
+          "size_gib": 16.43
+        },
+        {
+          "name": "model-00008-of-00030.safetensors",
+          "size_bytes": 4999711728,
+          "size_gib": 4.66
+        },
+        {
+          "name": "model-00013-of-00030.safetensors",
+          "size_bytes": 4999711728,
+          "size_gib": 4.66
+        },
+        {
+          "name": "model-00018-of-00030.safetensors",
+          "size_bytes": 4999711728,
+          "size_gib": 4.66
+        },
+        {
+          "name": "model-00023-of-00030.safetensors",
+          "size_bytes": 4999711728,
+          "size_gib": 4.66
+        }
+      ]
+    },
+    "config": {
+      "status": "pass",
+      "config_class": "LlamaConfig",
+      "config_module": "transformers.models.llama.configuration_llama",
+      "architectures": [
+        "LlamaForCausalLM"
+      ],
+      "model_type": "llama",
+      "airllm_compatible": "yes",
+      "airllm_reason": "Architecture 'LlamaForCausalLM' matches AirLLM marker 'Llama'.",
+      "airllm_mapped_class": "AirLLMLlama2",
+      "config_preview": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "model_type": "llama",
+        "hidden_size": 8192,
+        "num_hidden_layers": 80,
+        "num_attention_heads": 64,
+        "num_key_value_heads": 8,
+        "torch_dtype": "bfloat16",
+        "vocab_size": 128256
+      }
+    }
+  },
+  "disk": {
+    "before": {
+      "free_bytes": 402102870016,
+      "free_gib": 374.49,
+      "total_gib": 465.75
+    },
+    "after": {
+      "free_bytes": 402102677504,
+      "free_gib": 374.49,
+      "total_gib": 465.75
+    },
+    "used_gib": 0.0
+  },
+  "gpu": {
+    "cuda_available": true,
+    "torch_version": "2.11.0+cu128",
+    "torch_cuda_version": "12.8",
+    "device_count": 1,
+    "devices": [
+      "NVIDIA GeForce RTX 3060 Ti"
+    ],
+    "memory_allocated_gib": 0.0,
+    "memory_reserved_gib": 0.0,
+    "max_memory_allocated_gib": 0.0,
+    "max_memory_reserved_gib": 0.0
+  },
+  "ram": {
+    "process_rss_gib": 0.51,
+    "system_used_gib": 22.12,
+    "system_available_gib": 41.75,
+    "system_total_gib": 63.87
+  },
+  "timing": {
+    "load_seconds": null,
+    "generation_seconds": null
+  },
+  "output_sample": "",
+  "errors": [
+    "Refusing download: D: free space is insufficient for weights plus AirLLM shards with safety margin."
+  ],
+  "cache_paths": {
+    "HF_HOME": "D:\\AI\\airllm\\models\\huggingface",
+    "HUGGINGFACE_HUB_CACHE": "D:\\AI\\airllm\\models\\huggingface\\hub",
+    "TRANSFORMERS_CACHE": "D:\\AI\\airllm\\models\\huggingface\\transformers",
+    "TORCH_HOME": "D:\\AI\\airllm\\cache\\torch",
+    "TEMP": "D:\\AI\\airllm\\cache\\temp",
+    "TMP": "D:\\AI\\airllm\\cache\\temp"
+  },
+  "receipts": {
+    "text": "D:\\AI\\airllm\\receipts\\llama31_70b_test.txt",
+    "json": "D:\\AI\\airllm\\receipts\\llama31_70b_test.json"
+  },
+  "selection_reason": "selected"
+}

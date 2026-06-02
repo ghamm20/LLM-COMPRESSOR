@@ -1,0 +1,277 @@
+AirLLM Yi 34B test root: D:\AI\airllm
+Model: NousResearch/Nous-Hermes-2-Yi-34B
+D: free before any download: 246.37 GiB
+model_type: llama
+architectures: ['LlamaForCausalLM']
+estimated weights: 64.05 GiB
+estimated shards: 64.05 GiB
+estimated total with safety margin: 140.92 GiB
+AirLLM compatibility: yes - AirLLM AutoModel would match architecture 'LlamaForCausalLM' with marker 'Llama'.
+>>>> cache_utils installed
+found_layers:{'model.embed_tokens.': True, 'model.layers.0.': True, 'model.layers.1.': True, 'model.layers.2.': True, 'model.layers.3.': True, 'model.layers.4.': True, 'model.layers.5.': True, 'model.layers.6.': True, 'model.layers.7.': True, 'model.layers.8.': True, 'model.layers.9.': True, 'model.layers.10.': True, 'model.layers.11.': True, 'model.layers.12.': True, 'model.layers.13.': True, 'model.layers.14.': True, 'model.layers.15.': True, 'model.layers.16.': True, 'model.layers.17.': True, 'model.layers.18.': True, 'model.layers.19.': True, 'model.layers.20.': True, 'model.layers.21.': True, 'model.layers.22.': True, 'model.layers.23.': True, 'model.layers.24.': True, 'model.layers.25.': True, 'model.layers.26.': True, 'model.layers.27.': True, 'model.layers.28.': True, 'model.layers.29.': True, 'model.layers.30.': True, 'model.layers.31.': True, 'model.layers.32.': True, 'model.layers.33.': True, 'model.layers.34.': True, 'model.layers.35.': True, 'model.layers.36.': True, 'model.layers.37.': True, 'model.layers.38.': True, 'model.layers.39.': True, 'model.layers.40.': True, 'model.layers.41.': True, 'model.layers.42.': True, 'model.layers.43.': True, 'model.layers.44.': True, 'model.layers.45.': True, 'model.layers.46.': True, 'model.layers.47.': True, 'model.layers.48.': True, 'model.layers.49.': True, 'model.layers.50.': True, 'model.layers.51.': True, 'model.layers.52.': True, 'model.layers.53.': True, 'model.layers.54.': True, 'model.layers.55.': True, 'model.layers.56.': True, 'model.layers.57.': True, 'model.layers.58.': True, 'model.layers.59.': True, 'model.norm.': True, 'lm_head.': True}
+saved layers already found in D:\AI\airllm\models\NousResearch_Nous-Hermes-2-Yi-34B\airllm_shards\splitted_model
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+new version of transfomer, no need to use BetterTransformer, try setting attn impl to sdpa...
+attn imp: <class 'transformers.models.llama.modeling_llama.LlamaAttention'>
+{
+  "generated_at": "2026-06-02T21:31:24.901976+00:00",
+  "root": "D:\\AI\\airllm",
+  "model_id": "NousResearch/Nous-Hermes-2-Yi-34B",
+  "status": "FAIL",
+  "prompt": "Explain local LLM inference in one sentence.",
+  "max_new_tokens": 24,
+  "hf_token_present": false,
+  "download_attempted": true,
+  "metadata": {
+    "status": "pass",
+    "sha": "fcb0a8847e76aea14aba9aa44009d4418ad7c18f",
+    "gated": false,
+    "private": false,
+    "library_name": "transformers",
+    "pipeline_tag": "text-generation",
+    "tags": [
+      "transformers",
+      "safetensors",
+      "llama",
+      "text-generation",
+      "yi",
+      "instruct",
+      "finetune",
+      "chatml",
+      "gpt4",
+      "synthetic data",
+      "distillation",
+      "conversational",
+      "en",
+      "dataset:teknium/OpenHermes-2.5",
+      "base_model:01-ai/Yi-34B",
+      "base_model:finetune:01-ai/Yi-34B",
+      "license:apache-2.0",
+      "text-generation-inference",
+      "endpoints_compatible",
+      "deploy:azure",
+      "region:us"
+    ],
+    "parameter_hints": {
+      "safetensors": {
+        "parameters": {
+          "BF16": 34388917248
+        },
+        "total": 34388917248
+      },
+      "card_data": {}
+    },
+    "storage_hints": {
+      "repo_file_count": 23,
+      "weight_file_count": 15,
+      "unknown_weight_file_count": 0,
+      "known_weight_bytes": 68777898032,
+      "estimated_weight_gib": 64.05,
+      "estimated_airllm_shard_gib": 64.05,
+      "estimated_total_disk_needed_gib": 128.11,
+      "estimated_total_with_safety_margin_gib": 140.92,
+      "safety_multiplier": 1.1,
+      "largest_weight_files": [
+        {
+          "name": "model-00006-of-00015.safetensors",
+          "size_bytes": 4991370160,
+          "size_gib": 4.65
+        },
+        {
+          "name": "model-00009-of-00015.safetensors",
+          "size_bytes": 4991370160,
+          "size_gib": 4.65
+        },
+        {
+          "name": "model-00012-of-00015.safetensors",
+          "size_bytes": 4991370160,
+          "size_gib": 4.65
+        },
+        {
+          "name": "model-00003-of-00015.safetensors",
+          "size_bytes": 4991370136,
+          "size_gib": 4.65
+        },
+        {
+          "name": "model-00001-of-00015.safetensors",
+          "size_bytes": 4793130760,
+          "size_gib": 4.46
+        },
+        {
+          "name": "model-00004-of-00015.safetensors",
+          "size_bytes": 4756459760,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00005-of-00015.safetensors",
+          "size_bytes": 4756459760,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00007-of-00015.safetensors",
+          "size_bytes": 4756459760,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00008-of-00015.safetensors",
+          "size_bytes": 4756459760,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00010-of-00015.safetensors",
+          "size_bytes": 4756459760,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00011-of-00015.safetensors",
+          "size_bytes": 4756459760,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00013-of-00015.safetensors",
+          "size_bytes": 4756459760,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00014-of-00015.safetensors",
+          "size_bytes": 4756459760,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00002-of-00015.safetensors",
+          "size_bytes": 4756459720,
+          "size_gib": 4.43
+        },
+        {
+          "name": "model-00015-of-00015.safetensors",
+          "size_bytes": 1211148856,
+          "size_gib": 1.13
+        }
+      ],
+      "non_airllm_weight_like_files": []
+    }
+  },
+  "config": {
+    "status": "pass",
+    "config_class": "LlamaConfig",
+    "config_module": "transformers.models.llama.configuration_llama",
+    "model_type": "llama",
+    "architectures": [
+      "LlamaForCausalLM"
+    ],
+    "config_preview": {
+      "architectures": [
+        "LlamaForCausalLM"
+      ],
+      "model_type": "llama",
+      "hidden_size": 7168,
+      "num_hidden_layers": 60,
+      "num_attention_heads": 56,
+      "num_key_value_heads": 8,
+      "intermediate_size": 20480,
+      "torch_dtype": "bfloat16",
+      "vocab_size": 64000
+    },
+    "airllm_architecture_compatibility": {
+      "status": "yes",
+      "mapped_class": "AirLLMLlama2",
+      "reason": "AirLLM AutoModel would match architecture 'LlamaForCausalLM' with marker 'Llama'.",
+      "first_architecture": "LlamaForCausalLM",
+      "model_type": "llama",
+      "auto_markers": [
+        "Qwen2ForCausalLM",
+        "QWen",
+        "Baichuan",
+        "ChatGLM",
+        "InternLM",
+        "Mistral",
+        "Mixtral",
+        "Llama"
+      ]
+    }
+  },
+  "airllm_architecture_compatibility": {
+    "status": "yes",
+    "mapped_class": "AirLLMLlama2",
+    "reason": "AirLLM AutoModel would match architecture 'LlamaForCausalLM' with marker 'Llama'.",
+    "first_architecture": "LlamaForCausalLM",
+    "model_type": "llama",
+    "auto_markers": [
+      "Qwen2ForCausalLM",
+      "QWen",
+      "Baichuan",
+      "ChatGLM",
+      "InternLM",
+      "Mistral",
+      "Mixtral",
+      "Llama"
+    ]
+  },
+  "airllm_load": {
+    "status": "pass"
+  },
+  "generation": {
+    "status": "fail",
+    "error": "TypeError('cannot unpack non-iterable NoneType object')"
+  },
+  "disk": {
+    "before": {
+      "free_bytes": 264537534464,
+      "free_gib": 246.37,
+      "total_gib": 465.75
+    },
+    "after": {
+      "free_bytes": 264529027072,
+      "free_gib": 246.36,
+      "total_gib": 465.75
+    },
+    "used_gib": 0.01
+  },
+  "gpu": {
+    "cuda_available": true,
+    "torch_version": "2.11.0+cu128",
+    "torch_cuda_version": "12.8",
+    "device_count": 1,
+    "devices": [
+      "NVIDIA GeForce RTX 3060 Ti"
+    ],
+    "memory_allocated_gib": 1.05,
+    "memory_reserved_gib": 1.06,
+    "max_memory_allocated_gib": 1.05,
+    "max_memory_reserved_gib": 1.06
+  },
+  "ram": {
+    "process_rss_gib": 3.76,
+    "system_used_gib": 24.16,
+    "system_available_gib": 39.71,
+    "system_total_gib": 63.87
+  },
+  "timing": {
+    "load_start": "2026-06-02T21:31:56.133449+00:00",
+    "load_end": "2026-06-02T21:32:02.259119+00:00",
+    "load_seconds": 6.126,
+    "generation_start": "2026-06-02T21:32:02.261122+00:00",
+    "generation_end": null,
+    "generation_seconds": null
+  },
+  "output_sample": "",
+  "errors": [
+    "TypeError('cannot unpack non-iterable NoneType object')"
+  ],
+  "cache_paths": {
+    "HF_HOME": "D:\\AI\\airllm\\models\\huggingface",
+    "HUGGINGFACE_HUB_CACHE": "D:\\AI\\airllm\\models\\huggingface\\hub",
+    "TRANSFORMERS_CACHE": "D:\\AI\\airllm\\models\\huggingface\\transformers",
+    "TORCH_HOME": "D:\\AI\\airllm\\cache\\torch",
+    "TEMP": "D:\\AI\\airllm\\cache\\temp",
+    "TMP": "D:\\AI\\airllm\\cache\\temp"
+  },
+  "shard_dir": "D:\\AI\\airllm\\models\\NousResearch_Nous-Hermes-2-Yi-34B\\airllm_shards",
+  "receipts": {
+    "text": "D:\\AI\\airllm\\receipts\\yi34b_airllm_test.txt",
+    "json": "D:\\AI\\airllm\\receipts\\yi34b_airllm_test.json"
+  }
+}
+Wrote D:\AI\airllm\receipts\yi34b_airllm_test.txt
+Wrote D:\AI\airllm\receipts\yi34b_airllm_test.json

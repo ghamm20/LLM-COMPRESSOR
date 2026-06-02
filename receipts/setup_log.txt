@@ -1,0 +1,90 @@
+**********************
+PowerShell transcript start
+Start time: 20260602202307
+Username: DESKTOP-0F2NHB4\Gordy
+RunAs User: DESKTOP-0F2NHB4\Gordy
+Configuration Name: 
+Machine: DESKTOP-0F2NHB4 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.dll -Command [Console]::OutputEncoding=[System.Text.Encoding]::UTF8;
+.\setup_windows.ps1
+Process ID: 31952
+PSVersion: 7.6.2
+PSEdition: Core
+GitCommitId: 7.6.2
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+AirLLM local setup
+Root: D:\AI\airllm
+Repo: D:\AI\airllm\repo
+Package: D:\AI\airllm\repo\air_llm
+D: free before install: 374.32 GB
+PIP_CACHE_DIR=D:\AI\airllm\cache\pip
+TEMP=D:\AI\airllm\cache\temp
+TMP=D:\AI\airllm\cache\temp
+HF_HOME=D:\AI\airllm\models\huggingface
+HUGGINGFACE_HUB_CACHE=D:\AI\airllm\models\huggingface\hub
+TORCH_HOME=D:\AI\airllm\cache\torch
+Existing local virtual environment found: D:\AI\airllm\.venv
+Activated venv: D:\AI\airllm\.venv
+
+=== Python version ===
+
+
+=== Upgrade pip, setuptools, wheel within runtime constraints ===
+
+GPU detected: NVIDIA GeForce RTX 3060 Ti, 591.86, 8192 MiB
+CUDA version detected by nvidia-smi: 13.1
+Torch install plan: cu128 - Detected CUDA 13.1; choosing the newest supported wheel at or below the detected runtime.
+Installing torch from https://download.pytorch.org/whl/cu128 (cu128)
+
+Torch probe:
+{
+  "import_ok": true,
+  "version": "2.11.0+cu128",
+  "cuda_available": true,
+  "torch_cuda_version": "12.8",
+  "device_count": 1,
+  "devices": [
+    "NVIDIA GeForce RTX 3060 Ti"
+  ]
+}
+
+Repo top-level requirements.txt is present, but not installed by default.
+Reason: it appears to be training extras with old Windows/Python-sensitive pins.
+  bitsandbytes==0.39.0
+  transformers @ git+https://github.com/huggingface/transformers.git
+  peft @ git+https://github.com/huggingface/peft.git@v0.3.0
+  accelerate @ git+https://github.com/huggingface/accelerate.git@v0.20.3
+  einops==0.6.1
+  evaluate==0.4.0
+  scikit-learn==1.2.2
+  sentencepiece==0.1.99
+  wandb==0.15.3
+
+=== Install AirLLM package in editable mode ===
+
+
+Applying runtime compatibility pins required by AirLLM imports:
+  optimum==1.27.0
+  transformers==4.48.3
+  sentencepiece==0.2.1
+
+=== Install AirLLM runtime compatibility pins ===
+
+
+=== Reconcile setuptools to PyTorch constraint ===
+
+
+=== Validate dependency consistency with pip check ===
+
+D: free after install: 374.32 GB
+Setup summary: D:\AI\airllm\receipts\setup_summary.json
+**********************
+PowerShell transcript end
+End time: 20260602202323
+**********************

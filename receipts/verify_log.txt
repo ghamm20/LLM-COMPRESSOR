@@ -1,0 +1,62 @@
+**********************
+PowerShell transcript start
+Start time: 20260602202328
+Username: DESKTOP-0F2NHB4\Gordy
+RunAs User: DESKTOP-0F2NHB4\Gordy
+Configuration Name: 
+Machine: DESKTOP-0F2NHB4 (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.dll -Command [Console]::OutputEncoding=[System.Text.Encoding]::UTF8;
+.\verify_airllm.ps1
+Process ID: 31992
+PSVersion: 7.6.2
+PSEdition: Core
+GitCommitId: 7.6.2
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+AirLLM local verification
+Root: D:\AI\airllm
+D: free at verification: 374.32 GB
+Activated venv: D:\AI\airllm\.venv
+
+=== Python version ===
+Python 3.12.10
+
+
+=== pip freeze ===
+Wrote D:\AI\airllm\receipts\pip_freeze.txt
+GPU detected: NVIDIA GeForce RTX 3060 Ti, 591.86, 8192 MiB
+CUDA version detected by nvidia-smi: 13.1
+
+=== Torch and AirLLM import probe ===
+>>>> cache_utils installed
+{
+  "torch": {
+    "import_ok": true,
+    "version": "2.11.0+cu128",
+    "torch_cuda_version": "12.8",
+    "cuda_available": true,
+    "device_count": 1,
+    "devices": [
+      "NVIDIA GeForce RTX 3060 Ti"
+    ]
+  },
+  "airllm": {
+    "import_ok": true,
+    "module_file": "D:\\AI\\airllm\\repo\\air_llm\\airllm\\__init__.py",
+    "automodel_callable": true,
+    "llama_class": "AirLLMLlama2"
+  }
+}
+
+=== Smoke test ===
+
+Verification summary: D:\AI\airllm\receipts\verify_summary.json
+**********************
+PowerShell transcript end
+End time: 20260602202336
+**********************

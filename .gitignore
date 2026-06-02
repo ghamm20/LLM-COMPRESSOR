@@ -1,0 +1,26 @@
+.venv/
+cache/
+models/
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.ipynb
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+*.tmp
+*.temp
+.env
+.env.*
+
+# Keep generated verification receipts, but avoid accidental binary/model artifacts.
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf

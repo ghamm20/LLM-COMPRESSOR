@@ -1,0 +1,193 @@
+AirLLM Qwen3.5 27B test root: D:\AI\airllm
+Model: Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled
+D: free before any download: 374.49 GiB
+{
+  "generated_at": "2026-06-02T20:59:46.080747+00:00",
+  "root": "D:\\AI\\airllm",
+  "model_id": "Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled",
+  "status": "PARTIAL",
+  "prompt": "Explain local LLM inference in one sentence.",
+  "max_new_tokens": 24,
+  "hf_token_present": false,
+  "download_attempted": false,
+  "metadata": {
+    "status": "pass",
+    "sha": "0fa2149bd033482b9d066fafc5dddb8988df08e9",
+    "gated": false,
+    "private": false,
+    "library_name": null,
+    "pipeline_tag": "image-text-to-text",
+    "tags": [
+      "safetensors",
+      "qwen3_5",
+      "unsloth",
+      "qwen",
+      "qwen3.5",
+      "reasoning",
+      "chain-of-thought",
+      "Dense",
+      "image-text-to-text",
+      "conversational",
+      "en",
+      "zh",
+      "dataset:nohurry/Opus-4.6-Reasoning-3000x-filtered",
+      "dataset:Jackrong/Qwen3.5-reasoning-700x",
+      "base_model:Qwen/Qwen3.5-27B",
+      "base_model:finetune:Qwen/Qwen3.5-27B",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "parameter_hints": {
+      "safetensors": {
+        "parameters": {
+          "BF16": 27781419504,
+          "F32": 8448
+        },
+        "total": 27781427952
+      },
+      "card_data": {}
+    },
+    "storage_hints": {
+      "repo_file_count": 19,
+      "airllm_weight_file_count": 11,
+      "unknown_airllm_weight_file_count": 0,
+      "known_airllm_weight_bytes": 55563022432,
+      "estimated_weight_gib": 51.75,
+      "estimated_airllm_shard_gib": 51.75,
+      "estimated_total_disk_needed_gib": 103.49,
+      "estimated_total_with_safety_margin_gib": 113.84,
+      "safety_multiplier": 1.1,
+      "largest_airllm_weight_files": [
+        {
+          "name": "model.safetensors-00008-of-00011.safetensors",
+          "size_bytes": 5368714128,
+          "size_gib": 5.0
+        },
+        {
+          "name": "model.safetensors-00010-of-00011.safetensors",
+          "size_bytes": 5347749200,
+          "size_gib": 4.98
+        },
+        {
+          "name": "model.safetensors-00009-of-00011.safetensors",
+          "size_bytes": 5347745520,
+          "size_gib": 4.98
+        },
+        {
+          "name": "model.safetensors-00003-of-00011.safetensors",
+          "size_bytes": 5347741504,
+          "size_gib": 4.98
+        },
+        {
+          "name": "model.safetensors-00004-of-00011.safetensors",
+          "size_bytes": 5347741504,
+          "size_gib": 4.98
+        },
+        {
+          "name": "model.safetensors-00005-of-00011.safetensors",
+          "size_bytes": 5347741504,
+          "size_gib": 4.98
+        },
+        {
+          "name": "model.safetensors-00006-of-00011.safetensors",
+          "size_bytes": 5347741504,
+          "size_gib": 4.98
+        },
+        {
+          "name": "model.safetensors-00007-of-00011.safetensors",
+          "size_bytes": 5347741496,
+          "size_gib": 4.98
+        },
+        {
+          "name": "model.safetensors-00002-of-00011.safetensors",
+          "size_bytes": 5347741440,
+          "size_gib": 4.98
+        },
+        {
+          "name": "model.safetensors-00001-of-00011.safetensors",
+          "size_bytes": 5263851872,
+          "size_gib": 4.9
+        },
+        {
+          "name": "model.safetensors-00011-of-00011.safetensors",
+          "size_bytes": 2148512760,
+          "size_gib": 2.0
+        }
+      ],
+      "non_airllm_weight_like_files": []
+    }
+  },
+  "config": {
+    "status": "fail",
+    "error": "ValueError('The checkpoint you are trying to load has model type `qwen3_5` but Transformers does not recognize this architecture. This could be because of an issue with the checkpoint, or because your version of Transformers is out of date.\\n\\nYou can update Transformers with the command `pip install --upgrade transformers`. If this does not work, and the checkpoint is very new, then there may not be a release version that supports this model yet. In this case, you can get the most up-to-date code by installing Transformers from source with the command `pip install git+https://github.com/huggingface/transformers.git`')"
+  },
+  "airllm_architecture_compatibility": {
+    "status": "no",
+    "reason": "Config could not be loaded locally with trust_remote_code=True."
+  },
+  "airllm_load": {
+    "status": "not_attempted"
+  },
+  "generation": {
+    "status": "not_attempted"
+  },
+  "disk": {
+    "before": {
+      "free_bytes": 402102521856,
+      "free_gib": 374.49,
+      "total_gib": 465.75
+    },
+    "after": {
+      "free_bytes": 402102505472,
+      "free_gib": 374.49,
+      "total_gib": 465.75
+    },
+    "used_gib": 0.0
+  },
+  "gpu": {
+    "cuda_available": true,
+    "torch_version": "2.11.0+cu128",
+    "torch_cuda_version": "12.8",
+    "device_count": 1,
+    "devices": [
+      "NVIDIA GeForce RTX 3060 Ti"
+    ],
+    "memory_allocated_gib": 0.0,
+    "memory_reserved_gib": 0.0,
+    "max_memory_allocated_gib": 0.0,
+    "max_memory_reserved_gib": 0.0
+  },
+  "ram": {
+    "process_rss_gib": 0.51,
+    "system_used_gib": 22.05,
+    "system_available_gib": 41.81,
+    "system_total_gib": 63.87
+  },
+  "timing": {
+    "load_start": null,
+    "load_end": null,
+    "load_seconds": null,
+    "generation_start": null,
+    "generation_end": null,
+    "generation_seconds": null
+  },
+  "output_sample": "",
+  "errors": [
+    "Config preflight failed: ValueError('The checkpoint you are trying to load has model type `qwen3_5` but Transformers does not recognize this architecture. This could be because of an issue with the checkpoint, or because your version of Transformers is out of date.\\n\\nYou can update Transformers with the command `pip install --upgrade transformers`. If this does not work, and the checkpoint is very new, then there may not be a release version that supports this model yet. In this case, you can get the most up-to-date code by installing Transformers from source with the command `pip install git+https://github.com/huggingface/transformers.git`')"
+  ],
+  "cache_paths": {
+    "HF_HOME": "D:\\AI\\airllm\\models\\huggingface",
+    "HUGGINGFACE_HUB_CACHE": "D:\\AI\\airllm\\models\\huggingface\\hub",
+    "TRANSFORMERS_CACHE": "D:\\AI\\airllm\\models\\huggingface\\transformers",
+    "TORCH_HOME": "D:\\AI\\airllm\\cache\\torch",
+    "TEMP": "D:\\AI\\airllm\\cache\\temp",
+    "TMP": "D:\\AI\\airllm\\cache\\temp"
+  },
+  "shard_dir": "D:\\AI\\airllm\\models\\Jackrong_Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled\\airllm_shards",
+  "receipts": {
+    "text": "D:\\AI\\airllm\\receipts\\qwen35_27b_airllm_test.txt",
+    "json": "D:\\AI\\airllm\\receipts\\qwen35_27b_airllm_test.json"
+  }
+}
+Wrote D:\AI\airllm\receipts\qwen35_27b_airllm_test.txt
+Wrote D:\AI\airllm\receipts\qwen35_27b_airllm_test.json

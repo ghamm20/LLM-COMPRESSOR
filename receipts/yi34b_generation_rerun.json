@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-06-02T22:02:40.656284+00:00",
+  "root": "D:\\AI\\airllm",
+  "model_id": "NousResearch/Nous-Hermes-2-Yi-34B",
+  "model_snapshot": "D:\\AI\\airllm\\models\\huggingface\\hub\\models--NousResearch--Nous-Hermes-2-Yi-34B\\snapshots\\fcb0a8847e76aea14aba9aa44009d4418ad7c18f",
+  "shard_dir": "D:\\AI\\airllm\\models\\NousResearch_Nous-Hermes-2-Yi-34B\\airllm_shards",
+  "prompt": "Explain local LLM inference in one sentence.",
+  "max_new_tokens": 16,
+  "status": "PASS",
+  "download_attempted": false,
+  "airllm_load": {
+    "status": "pass",
+    "model_class": "AirLLMLlama2",
+    "inner_model_class": "LlamaForCausalLM"
+  },
+  "generation": {
+    "status": "pass",
+    "sequences": {
+      "type": "Tensor",
+      "shape": [
+        1,
+        26
+      ],
+      "dtype": "torch.int64",
+      "device": "cuda:0"
+    },
+    "new_text": "\n\nLocal LLM inference refers to the process of using a pre-trained"
+  },
+  "output_sample": "Explain local LLM inference in one sentence.\n\nLocal LLM inference refers to the process of using a pre-trained",
+  "errors": [],
+  "traceback": "",
+  "disk": {
+    "before": {
+      "total_gib": 465.75,
+      "used_gib": 219.38,
+      "free_gib": 246.36
+    },
+    "after": {
+      "total_gib": 465.75,
+      "used_gib": 219.38,
+      "free_gib": 246.36
+    }
+  },
+  "timing": {
+    "load_start": "2026-06-02T22:02:44.377640+00:00",
+    "load_end": "2026-06-02T22:02:46.449372+00:00",
+    "load_seconds": 2.072,
+    "generation_start": "2026-06-02T22:02:46.452799+00:00",
+    "generation_end": "2026-06-02T22:56:59.562144+00:00",
+    "generation_seconds": 3253.109
+  },
+  "gpu_before": {
+    "torch_version": "2.11.0+cu128",
+    "torch_cuda_version": "12.8",
+    "cuda_available": true,
+    "device_count": 1,
+    "devices": [
+      "NVIDIA GeForce RTX 3060 Ti"
+    ],
+    "memory_allocated_gib": 0.0,
+    "memory_reserved_gib": 0.0,
+    "max_memory_allocated_gib": 0.0,
+    "max_memory_reserved_gib": 0.0
+  },
+  "ram_before": {
+    "process_rss_gib": 0.59,
+    "system_used_gib": 25.09,
+    "system_available_gib": 38.78,
+    "system_total_gib": 63.87
+  },
+  "gpu_after": {
+    "torch_version": "2.11.0+cu128",
+    "torch_cuda_version": "12.8",
+    "cuda_available": true,
+    "device_count": 1,
+    "devices": [
+      "NVIDIA GeForce RTX 3060 Ti"
+    ],
+    "memory_allocated_gib": 0.01,
+    "memory_reserved_gib": 0.04,
+    "max_memory_allocated_gib": 1.05,
+    "max_memory_reserved_gib": 1.07
+  },
+  "ram_after": {
+    "process_rss_gib": 3.91,
+    "system_used_gib": 20.41,
+    "system_available_gib": 43.46,
+    "system_total_gib": 63.87
+  },
+  "finished_at": "2026-06-02T22:56:59.568647+00:00"
+}
