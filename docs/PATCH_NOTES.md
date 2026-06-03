@@ -71,3 +71,14 @@ AirLLM now adds that argument to decoder-layer calls when `get_pos_emb_args` did
 ## Result
 
 After the patch, `NousResearch/Nous-Hermes-2-Yi-34B` generated actual text through AirLLM locally. No remote inference endpoint was used.
+
+## Cross-Model Verification
+
+The same `position_embeddings` patch is now verified across multiple Yi-family 34B models:
+
+- `NousResearch/Nous-Hermes-2-Yi-34B`
+- `01-ai/Yi-34B-Chat`
+
+For `01-ai/Yi-34B-Chat`, AirLLM mapped the model to `AirLLMLlama2`, reused the existing local Hugging Face snapshot and AirLLM split shards, and generated decoded text for both 1-token and 4-token local-only reruns. The old `position_embeddings` failure did not return.
+
+The first long Yi-34B-Chat run missed final receipts because Windows rebooted while Python was still generating, not because of a Python traceback or model compatibility failure. A later 4-token PASS run exposed a separate redirected stdout `UnicodeEncodeError` after receipts had been written; the PowerShell launchers now force UTF-8 output and the Yi-34B-Chat runners fall back to ASCII-safe JSON unless stdout is UTF-8.

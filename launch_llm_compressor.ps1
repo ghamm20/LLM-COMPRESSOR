@@ -16,6 +16,8 @@ $env:TRANSFORMERS_CACHE = Join-Path $Root "models\huggingface\transformers"
 $env:TORCH_HOME = Join-Path $Root "cache\torch"
 $env:TEMP = Join-Path $Root "cache\temp"
 $env:TMP = Join-Path $Root "cache\temp"
+$env:PYTHONIOENCODING = "utf-8"
+$env:PYTHONUTF8 = "1"
 
 if (-not (Test-Path -LiteralPath $VenvActivate)) {
     throw "Virtual environment activation script not found: $VenvActivate"
@@ -26,7 +28,7 @@ if (-not (Test-Path -LiteralPath $VenvActivate)) {
 Clear-Host
 Write-Host "================================="
 Write-Host "LLM-COMPRESSOR"
-Write-Host "Version: v0.1.0-yi34b-airllm-pass"
+Write-Host "Version: v0.1.1-yi-family-compat"
 Write-Host "Repo: ghamm20/LLM-COMPRESSOR"
 Write-Host "============================"
 Write-Host ""

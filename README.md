@@ -16,16 +16,23 @@ LLM-COMPRESSOR is a local large-model inference experiment workspace built aroun
 
 Inference is local. Model downloads come from Hugging Face and are cached under the local workspace. No OpenAI, Anthropic, Gemini, Hugging Face Inference API, Spaces, or other remote inference endpoints are used by the test scripts.
 
-## Known Working Model
+## Known Working Models
 
 | Model | Load | Generation | Patch Required | Notes |
 | --- | --- | --- | --- | --- |
 | `NousResearch/Nous-Hermes-2-Yi-34B` | pass | pass | yes | Runs through AirLLM after the local Llama rotary embedding compatibility patch. |
+| `01-ai/Yi-34B-Chat` | pass | pass | yes | Existing shards loaded locally; 1-token and 4-token generation passed through AirLLM. The same `position_embeddings` patch worked unchanged. Runtime is about 210 seconds/token on RTX 3060 Ti 8GB, so this is a compatibility proof, not a daily interactive model. |
 
 Run the Yi-34B verification rerun:
 
 ```powershell
 Set-Location D:\AI\airllm; .\rerun_yi34b_generation.ps1
+```
+
+Run the Yi-34B-Chat 1-token local-only compatibility check:
+
+```powershell
+Set-Location D:\AI\airllm; .\launch_yi34b_chat_1token.ps1
 ```
 
 ## Known Blocked Models
@@ -47,6 +54,11 @@ Patched file:
 
 The patch computes rotary position embeddings from `self.model.model.rotary_emb(seq, position_ids)` when available and passes them into decoder-layer calls. Backup and diff receipts are stored under `receipts`.
 
+The patch is now verified across multiple Yi-family 34B models:
+
+- `NousResearch/Nous-Hermes-2-Yi-34B`
+- `01-ai/Yi-34B-Chat`
+
 ## Key Receipts
 
 - `receipts\setup_log.txt`
@@ -59,6 +71,18 @@ The patch computes rotary position embeddings from `self.model.model.rotary_emb(
 - `receipts\yi34b_generation_rerun.json`
 - `receipts\yi34b_generation_rerun_stdout.log`
 - `receipts\yi34b_generation_rerun_stderr.log`
+- `receipts\yi34b_chat_partial_forensics.txt`
+- `receipts\yi34b_chat_partial_forensics.json`
+- `receipts\yi34b_chat_minimal_rerun.txt`
+- `receipts\yi34b_chat_minimal_rerun.json`
+- `receipts\yi34b_chat_4token_rerun.txt`
+- `receipts\yi34b_chat_4token_rerun.json`
+
+## Yi-34B-Chat Notes
+
+The first long Yi-34B-Chat run was partial because Windows rebooted during generation before the final receipt writer ran. A forensic pass found no Python traceback, no AirLLM architecture failure, and no return of the old `position_embeddings` bug.
+
+Follow-up local-only reruns used the already downloaded Hugging Face snapshot and existing AirLLM shards. Both 1-token and 4-token generation passed. The 4-token output included non-ASCII text, which exposed a redirected stdout encoding issue after receipts had already been written. The launcher scripts now force UTF-8 with `PYTHONIOENCODING=utf-8` and `PYTHONUTF8=1`, and Yi-34B-Chat runners print ASCII-safe JSON unless stdout is UTF-8.
 
 ## Storage Warning
 
